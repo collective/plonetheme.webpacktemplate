@@ -1,0 +1,20 @@
+[buildout]
+extends = https://dist.plone.org/release/{{{ plone.version }}}/versions.cfg
+parts = instance plonesite
+
+[instance]
+recipe = plone.recipe.zope2instance
+user = admin:admin
+eggs =
+    Plone
+    rapido.plone
+resources = ${buildout:directory}/resources
+
+[plonesite]
+recipe = collective.recipe.plonesite
+instance = instance
+site-id = Plone
+default-language = en
+products-initial =
+    plone.app.contenttypes
+    rapido.plone

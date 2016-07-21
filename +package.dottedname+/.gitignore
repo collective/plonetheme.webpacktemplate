@@ -1,0 +1,13 @@
+/.idea/
+/.installed.cfg
+/.mr.developer.cfg
+/bin/
+/develop-eggs/
+/parts/
+/resources/node_modules/
+/resources/theme/
+/src/
+/var/
+/result
+/bootstrap-buildout.py
+/test.py

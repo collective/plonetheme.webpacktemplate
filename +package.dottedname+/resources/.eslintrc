@@ -1,0 +1,25 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-console": 1,
+    "new-cap": 1,
+    "strict": 0,
+    "no-underscore-dangle": 1,
+    "no-use-before-define": 1,
+    "eol-last": 0,
+    "quotes": [2, "single"],
+    "jsx-quotes": 1,
+    "react/jsx-no-undef": 1,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+  xmlns="http://namespaces.plone.org/diazo"
+  xmlns:css="http://namespaces.plone.org/diazo/css"
+  css:if-content="#visual-portal-wrapper">
+
+  <!-- Inject custom.css -->
+  <after theme-children="/html/head" method="raw"
+         content="/html/head/link[@data-bundle='diazo']" />
+
+  <!-- Inject custom.js -->
+  <after theme-children="/html/body" method="raw"
+         content="/html/head/script[@data-bundle='diazo']" />
+
+</rules>

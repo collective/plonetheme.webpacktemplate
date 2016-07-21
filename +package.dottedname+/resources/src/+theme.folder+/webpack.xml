@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+  xmlns="http://namespaces.plone.org/diazo"
+  xmlns:css="http://namespaces.plone.org/diazo/css">
+
+  <!-- Drop default stylesheets and scripts -->
+  <drop content="//link[@rel='stylesheet']|//script" />
+
+  <!-- Move scripts within body after bundle -->
+  <after theme-children="/html/body" method="raw"
+         content="/html/body//script" />
+
+  <!-- Drop anonymous bundle for logged-in-users -->
+  <drop css:if-content="body.userrole-authenticated"
+        theme="//*[@data-name='bundle-anonymous']" />
+
+  <!-- Drop logged-in bundles for anonymous users -->
+  <drop css:if-content="body.userrole-anonymous"
+        theme="//*[@data-name='bundle-authenticated']" />
+
+</rules>

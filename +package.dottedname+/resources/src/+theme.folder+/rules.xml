@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- Import Barceloneta rules -->
+  <xi:include href="++theme++barceloneta/rules.xml" />
+
+  <!-- Import TTW customizations -->
+  <xi:include href="++theme++custom/rules.xml" />
+
+  <!-- Configure webpack built bundles -->
+  <xi:include href="webpack.xml" />
+
+  <!-- Inject license selector pattern -->
+  <replace css:content="textarea#form-widgets-IDublinCore-rights">
+    <xsl:copy>
+      <xsl:attribute name="class">
+        <xsl:value-of select="concat(@class, ' pat-license-selector')" />
+      </xsl:attribute>
+      <xsl:apply-templates select="@*[name()!='class']|node()" />
+    </xsl:copy>
+  </replace>
+
+  <!-- Inject license badge below content body -->
+  <replace css:content="#viewlet-below-content-body"
+           css:if-not-content="textarea#form-widgets-IDublinCore-rights">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()" />
+      <xsl:copy-of select="document('@@theme-fragment/license',
+                          $diazo-base-document)/html/body/*" />
+    </xsl:copy>
+  </replace>
+</rules>
