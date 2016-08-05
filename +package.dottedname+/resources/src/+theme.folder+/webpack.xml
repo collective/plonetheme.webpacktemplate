@@ -10,12 +10,8 @@
   <after theme-children="/html/body" method="raw"
          content="/html/body//script" />
 
-  <!-- Drop anonymous bundle for logged-in-users -->
-  <drop css:if-content="body.userrole-authenticated"
-        theme="//*[@data-name='bundle-anonymous']" />
-
   <!-- Drop logged-in bundles for anonymous users -->
   <drop css:if-content="body.userrole-anonymous"
-        theme="//*[@data-name='bundle-authenticated']" />
+        theme="//*[@data-name='bundle-logged-in']" />
 
 </rules>

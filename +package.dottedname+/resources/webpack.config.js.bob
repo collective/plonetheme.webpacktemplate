@@ -20,8 +20,8 @@ const PLONE = new PlonePlugin({
 
 const common = {
   entry: {
-   'anonymous': path.join(PATHS.src, 'anonymous'),
-   'authenticated': path.join(PATHS.src, 'authenticated')
+   'default': path.join(PATHS.src, 'default'),
+   'logged-in': path.join(PATHS.src, 'logged-in')
   },
   output: {
     path: PATHS.build
@@ -32,7 +32,9 @@ const common = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
     alias: {
-      'react': 'react'  // override react shipped in Plone
+      'react': 'react', // override react shipped in Plone
+      'mockup-patterns-querystring': path.join( // broken in Plone 5.0.x with Webpack
+         __dirname, 'node_modules/mockup/mockup/patterns/querystring/pattern')
     }
   },
   module: {
@@ -58,7 +60,10 @@ switch(path.basename(process.argv[1])) {
 
   case 'webpack-dev-server':
     module.exports = merge(PLONE.development, common, {
-      entry: path.join(PATHS.src, 'authenticated')
+      entry: [
+        path.join(PATHS.src, 'default'),
+        path.join(PATHS.src, 'logged-in')
+      ]
     });
     break;
 }
