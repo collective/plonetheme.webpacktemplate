@@ -1,9 +1,9 @@
 [theme]
 title = {{{ theme.title}}} Customizations
-description = Copy this as "{{{ theme.folder }}}-custom", but don't activate it, to add customizations for {{{ theme.title }}} TTW
+description = Copy this as "{{{ theme.folder }}}-custom", but don't activate it, to add customizations for {{{ theme.title }}} TTW
 preview = preview.png
 rules = /++theme++{{{ theme.folder }}}/rules.xml?custom
 prefix = /++theme++{{{ theme.folder }}}
 doctype = <!DOCTYPE html>
-production-css = /++theme++{{{ theme.folder }}}-custom/custom.css
-production-js = /++theme++{{{ theme.folder }}}-custom/custom.js
+production-css = ++theme++{{{ theme.folder }}}-custom/custom.css
+production-js = ++theme++{{{ theme.folder }}}-custom/custom.js
