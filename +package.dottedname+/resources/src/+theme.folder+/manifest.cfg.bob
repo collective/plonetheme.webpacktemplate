@@ -8,6 +8,6 @@ doctype = <!DOCTYPE html>
 production-css = /++theme++{{{ theme.folder }}}-custom/custom.css
 production-js = /++theme++{{{ theme.folder }}}-custom/custom.js
 <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-<% if (chunk.startsWith('__init__') && htmlWebpackPlugin.files.chunks[chunk].css[0]) { %>
+<% if (chunk.startsWith('default') && htmlWebpackPlugin.files.chunks[chunk].css[0]) { %>
 tinymce-content-css = <%= htmlWebpackPlugin.files.chunks[chunk].css[0] %>
 <% }} %>
