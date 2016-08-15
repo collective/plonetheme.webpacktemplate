@@ -2,7 +2,10 @@
 =========================
 
 This is a Plone theme based on Webpack.
-Clone the project:
+
+
+Build with a local Plone site
+-----------------------------
 
 Start Plone and webpack-dev-server:
 
@@ -22,3 +25,19 @@ Production theme is built with:
 
 Please, note that Plone must be running while running the build, because
 webpack fetches all the default resources directly from a Plone site.
+
+
+Build with a vagrant based Plone site
+-------------------------------------
+
+Start Plone and webpack-dev-server:
+
+.. code:: shell
+
+   $ make -f Makefile.vagrant watch
+
+Production theme is built with:
+
+.. code:: shell
+
+   $ make -f Makefile.vagrant
