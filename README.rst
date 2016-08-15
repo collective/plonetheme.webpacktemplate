@@ -3,8 +3,6 @@ plonetheme.webpacktemplate
 
 ``plonetheme.webpacktemplate`` provides a `mr.bob <http://mrbob.readthedocs.org/en/latest/>`_ template to generate a webpack thema package for Plone.
 
-Note: this template code is copied from `plonetheme.webpackexample <https://github.com/datakurre/plonetheme.webpackexample>`_.
-
 
 Generate a new theme
 --------------------
