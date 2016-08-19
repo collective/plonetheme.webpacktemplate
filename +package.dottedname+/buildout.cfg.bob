@@ -8,12 +8,13 @@ user = admin:admin
 eggs =
     Plone
     rapido.plone
+    collective.themesitesetup
 resources = ${buildout:directory}/resources
 
 [plonesite]
 recipe = collective.recipe.plonesite
 instance = instance
-site-id = Plone
+site-id = {{{ site.siteid }}}
 default-language = en
 products-initial =
     plone.app.contenttypes

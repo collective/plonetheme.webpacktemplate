@@ -4,7 +4,7 @@ const merge = require('webpack-merge');
 
 const PlonePlugin = require('plonetheme-webpack-plugin');
 
-const SITENAME = process.env.SITENAME || 'Plone';
+const SITENAME = process.env.SITENAME || '{{{ theme.siteid }}}';
 const THEMENAME = process.env.THEMENAME || '{{{ theme.folder }}}';
 
 const PATHS = {
