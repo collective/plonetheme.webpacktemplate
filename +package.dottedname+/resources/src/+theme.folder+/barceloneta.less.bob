@@ -136,10 +136,10 @@
   background-image: url(icons/mfglabs-link-white.svg);
 }
 .contenttype-document:before {
-  background-image: url(icons/fontawesome-doc-text-black.svg);
+  background-image: url(icons/fontawesome-doc-inv-black.svg);
 }
 .contenttype-document:after{
-  background-image: url(icons/fontawesome-doc-text-white.svg);
+  background-image: url(icons/fontawesome-doc-inv-white.svg);
 }
 .contenttype-event:before {
   background-image: url(icons/fontawesome-calendar-empty-black.svg);
