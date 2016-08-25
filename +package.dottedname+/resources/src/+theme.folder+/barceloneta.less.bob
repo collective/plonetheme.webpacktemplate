@@ -86,7 +86,7 @@
   height: 20px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 16px 16px;
+  background-size: 15px 15px;
   content: "";
 }
 
@@ -105,7 +105,7 @@
     height: 20px;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 16px 16px;
+    background-size: 15px 15px;
     content: "";
   }
 }
