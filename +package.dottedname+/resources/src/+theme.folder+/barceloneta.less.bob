@@ -42,9 +42,9 @@
 @import "@{barcelonetaPath}/less/controlpanels.plone.less";
 @import "@{barcelonetaPath}/less/tags.plone.less";
 {{% if not theme.svg %}}
-//@import "@{barcelonetaPath}/less/contents.plone.less"; //fontello
-{{% else %}}
 @import "@{barcelonetaPath}/less/contents.plone.less"; //fontello
+{{% else %}}
+//@import "@{barcelonetaPath}/less/contents.plone.less"; //fontello
 {{% endif %}}
 
 //*// Patterns
