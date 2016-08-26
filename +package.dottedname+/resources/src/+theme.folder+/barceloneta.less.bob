@@ -97,10 +97,10 @@
   margin: 0 0 -@plone-padding-base-vertical * 0.75 0;
   padding: 0;
   left: inherit;
-  width: 20px;
+  width: 18px;
   height: 20px;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center left;
   background-size: 15px 15px;
   content: "";
 }
