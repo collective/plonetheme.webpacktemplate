@@ -1,13 +1,13 @@
 [theme]
-title = Example Theme
+title = {{{ theme.title}}}
 description = Webpack built and optimized theme
 preview = preview.png
 rules = /++theme++{{{ theme.folder }}}/rules.xml
 prefix = /++theme++{{{ theme.folder }}}
 doctype = <!DOCTYPE html>
-production-css = ++theme++custom/custom.css
-production-js = ++theme++custom/custom.js
+production-css = ++theme++{{{ theme.folder }}}-custom/custom.css
+production-js = ++theme++{{{ theme.folder }}}-custom/custom.js
 <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-<% if (chunk.startsWith('__init__') && htmlWebpackPlugin.files.chunks[chunk].css[0]) { %>
+<% if (chunk.startsWith('default') && htmlWebpackPlugin.files.chunks[chunk].css[0]) { %>
 tinymce-content-css = <%= htmlWebpackPlugin.files.chunks[chunk].css[0] %>
 <% }} %>

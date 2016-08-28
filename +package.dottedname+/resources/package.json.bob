@@ -8,11 +8,14 @@
     "babel-preset-react": "^6.5.0",
     "css-loader": "^0.14.5",
     "exports-loader": "^0.6.3",
-    "expose-loader": "^0.7.1",
+{{% if theme.svg %}}
+    "fontello-svg": "^0.5.0",
+{{% endif %}}
     "imports-loader": "^0.6.5",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
-    "plonetheme-webpack-plugin": "0.0.4",
+    "mockup": "https://github.com/plone/mockup.git#8c697a2892826b801e543080240f603a62c4aabb",
+    "plonetheme-webpack-plugin": "^0.3.0",
     "style-loader": "^0.13.1",
     "text-loader": "0.0.1",
     "url-loader": "^0.5.7",
@@ -21,5 +24,6 @@
     "webpack-merge": "^0.14.0"
   },
   "dependencies": {
+    "brace": "^0.8.0"
   }
 }
