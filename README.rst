@@ -15,7 +15,8 @@ Now you can use it like this:
 
 .. code:: bash
 
-   $ mrbob https://github.com/datakurre/plonetheme.webpacktemplate/archive/master.zip
+   $ git clone https://github.com/datakurre/plonetheme.webpacktemplate.git
+   $ mrbob plonetheme.webpacktemplate
 
 See `the documentation of mr.bob <http://mrbob.readthedocs.org/en/latest/>`_  for further information.
 
