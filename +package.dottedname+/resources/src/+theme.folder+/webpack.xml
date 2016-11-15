@@ -8,6 +8,8 @@
 
   <!-- Move scripts within body after bundle -->
   <after theme-children="/html/body" method="raw"
+           content="/html/head/script[not(@src)]" />
+  <after theme-children="/html/body" method="raw"
          content="/html/body//script" />
 
   <!-- Drop logged-in bundles for anonymous users -->
