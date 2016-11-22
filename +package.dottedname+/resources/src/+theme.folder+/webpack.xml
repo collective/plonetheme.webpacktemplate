@@ -4,9 +4,12 @@
   xmlns:css="http://namespaces.plone.org/diazo/css">
 
   <!-- Drop default stylesheets and scripts -->
-  <drop content="//link[@rel='stylesheet']|//script" />
+  <drop content="//link[@rel='stylesheet']" />
+  <drop content="//script" />
 
   <!-- Move scripts within body after bundle -->
+  <after theme-children="/html/body" method="raw"
+         content="/html/head/script[not(@src)]" />
   <after theme-children="/html/body" method="raw"
          content="/html/body//script" />
 
