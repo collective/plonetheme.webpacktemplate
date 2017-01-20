@@ -10,10 +10,10 @@ SOURCES = \
 all: build
 
 build: clean node_modules $(SOURCES)
-	webpack
+  npm run build
 
 watch: clean node_modules $(SOURCES)
-	webpack-dev-server
+  npm run watch
 
 clean:
 	$(RM) -r theme
