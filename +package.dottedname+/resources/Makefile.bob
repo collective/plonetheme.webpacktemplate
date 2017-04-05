@@ -10,10 +10,10 @@ SOURCES = \
 all: build
 
 build: clean node_modules $(SOURCES)
-  npm run build
+	npm run build
 
 watch: clean node_modules $(SOURCES)
-  npm run watch
+	npm run watch
 
 clean:
 	$(RM) -r theme
