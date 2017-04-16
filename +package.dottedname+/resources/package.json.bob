@@ -16,7 +16,7 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "mockup": "https://github.com/plone/mockup.git#8c697a2892826b801e543080240f603a62c4aabb",
-    "plonetheme-webpack-plugin": "^0.4.0",
+    "plonetheme-webpack-plugin": "^0.7.3",
     "style-loader": "^0.13.1",
     "text-loader": "0.0.1",
     "url-loader": "^0.5.7",
