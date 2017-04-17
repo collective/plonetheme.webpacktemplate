@@ -10,7 +10,9 @@
   <xi:include href="++theme++barceloneta/rules.xml" />
 
   <!-- Import TTW customizations -->
-  <xi:include href="++theme++{{{ theme.folder }}}-custom/rules.xml" />
+  <xi:include href="++theme++{{{ theme.folder }}}-custom/rules.xml">
+    <xi:fallback/>
+  </xi:include>
 
   <!-- Configure webpack built bundles -->
   <xi:include href="webpack.xml" />
