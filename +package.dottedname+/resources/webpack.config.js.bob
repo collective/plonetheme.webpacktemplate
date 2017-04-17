@@ -34,8 +34,16 @@ const common = {
     extensions: ['', '.js', '.jsx'],
     alias: {
       'react': 'react', // override react shipped in Plone
+{{% if plone.version.startswith('5.0') %}}
       'mockup-patterns-querystring': path.join( // broken in Plone 5.0.x with Webpack
          __dirname, 'node_modules/mockup/mockup/patterns/querystring/pattern')
+{{% endif %}}
+{{% if plone.version.startswith('5.1') %}}
+      'mockup-patterns-structure': path.join(
+        __dirname, 'node_modules', 'mockup', 'mockup', 'patterns', 'structure', 'pattern'),
+      'mockup-patterns-structure-url': path.join(
+__dirname, 'node_modules', 'mockup', 'mockup', 'patterns', 'structure')
+{{% endif %}}
     }
   },
   module: {

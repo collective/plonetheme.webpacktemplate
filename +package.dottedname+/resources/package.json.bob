@@ -9,7 +9,7 @@
     "css-loader": "^0.14.5",
     "exports-loader": "^0.6.3",
     "file-loader": "^0.9.0",
-{{% if theme.svg %}}
+{{% if theme.svg in [True, 'yes'] %}}
     "fontello-svg": "^0.5.0",
 {{% endif %}}
     "imports-loader": "^0.6.5",
@@ -25,7 +25,12 @@
   },
   "dependencies": {
     "brace": "^0.8.0",
+{{% if plone.version.startswith('5.0') %}}
     "mockup": "https://github.com/plone/mockup.git#3d7407e32b0578354828dac87fe749b42da4202f"
+{{% endif %}}
+{{% if plone.version.startswith('5.1') %}}
+    "mockup": "https://github.com/plone/mockup.git#819ac33131cd34683ed235ba139da827a1133dd2"
+{{% endif %}}
   },
   "scripts": {
     "watch": "webpack-dev-server",

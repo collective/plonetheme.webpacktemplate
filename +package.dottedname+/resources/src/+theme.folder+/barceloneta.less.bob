@@ -56,7 +56,7 @@
 @import "@{barcelonetaPath}/less/portlets.plone.less";
 @import "@{barcelonetaPath}/less/controlpanels.plone.less";
 @import "@{barcelonetaPath}/less/tags.plone.less";
-{{% if not theme.svg %}}
+{{% if theme.svg not in [True, 'yes'] %}}
 @import "@{barcelonetaPath}/less/contents.plone.less"; //fontello
 {{% else %}}
 //@import "@{barcelonetaPath}/less/contents.plone.less"; //fontello
@@ -88,7 +88,7 @@
 @import "@{barcelonetaPath}/less/discussion.plone.less";
 @import "@{barcelonetaPath}/less/search.plone.less";
 
-{{% if theme.svg %}}
+{{% if theme.svg in [True, 'yes'] %}}
 .image-icon, .image-tile { float: right; }
 
 #visual-portal-wrapper [class*="contenttype-"]:before {

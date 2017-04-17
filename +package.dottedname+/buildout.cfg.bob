@@ -2,6 +2,16 @@
 extends = https://dist.plone.org/release/{{{ plone.version }}}/versions.cfg
 parts = instance plonesite
 versions = versions
+{{% if plone.version.startswith('5.1') %}}
+
+extensions = mr.developer
+sources-dir = src
+sources = sources
+auto-checkout = mockup
+
+[sources]
+mockup = git https://github.com/plone/mockup.git
+{{% endif %}}
 
 [instance]
 recipe = plone.recipe.zope2instance
