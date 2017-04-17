@@ -7,11 +7,14 @@ cache:
 install:
 - nvm install 6
 - pip install mr.bob
-- if [ "$SVG" ]; then sed -ie "s#svg = no#svg = $SVG#" .travis-*.ini; fi
-- mrbob -O ../build -c .travis-plone-$PLONE.ini .
+- sed -ie "s#5-latest#$PLONE#" .travis.ini
+- if [ "$SVG" ]; then sed -ie "s#svg = no#svg = $SVG#" .travis.ini; fi
+- mrbob -O ../build -c .travis.ini .
 script:
-- make -C ../build/plonetheme.mytheme
+- make -C ../build/plonetheme.mytheme info build
 env:
+- PLONE=5-latest
+- PLONE=5-latest SVG=yes
 - PLONE=5.0.5
 - PLONE=5.0.6
 - PLONE=5.0.7

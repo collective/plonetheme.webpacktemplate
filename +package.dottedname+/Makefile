@@ -1,11 +1,14 @@
 BUILDOUT_BIN ?= $(shell command -v buildout || echo 'bin/buildout')
 BUILDOUT_ARGS ?=
 
-all: build
+all: clean build
 
-build: clean resources/theme
+build: resources/theme
 
-watch: clean bin/instance resources/Makefile
+info: $(BUILDOUT_BIN) buildout.cfg
+	$(BUILDOUT_BIN) -N annotate
+
+watch: bin/instance resources/Makefile
 	make -j watch_plone watch_theme
 
 watch_plone: bin/instance
