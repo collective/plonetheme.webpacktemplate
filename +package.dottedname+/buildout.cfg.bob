@@ -20,4 +20,5 @@ products-initial =
     plone.app.contenttypes
 
 [versions]
-plone.resource = 1.2
+setuptools =
+zc.buildout =
