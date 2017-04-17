@@ -7,6 +7,11 @@ cache:
 install:
 - nvm install 6
 - pip install mr.bob
-- mrbob -O ../build -c .travis-plone-5.0.5.ini .
+- mrbob -O ../build -c .travis-plone-$PLONE.ini .
 script:
 - make -C ../build/plonetheme.mytheme
+env:
+- PLONE=5.0.5
+- PLONE=5.0.6
+- PLONE=5.0.7
+- PLONE=5.0-latest
