@@ -31,4 +31,7 @@ src/{{{ theme.folder }}}/icons: node_modules fontello.json
 	fontello-svg --config fontello.json --no-css --verbose \
 	  --out src/{{{ theme.folder }}}/icons \
 	  --fill-colors "black:rgb(0,0,0)|white:rgb(255,255,255)"
+	sed -i -E \
+	  's|svg height="([^"]+)" width="([^"]+)"|svg viewBox="0 0 \2 \1"|g' \
+	  src/{{{ theme.folder }}}/icons/*.svg
 {{% endif %}}
