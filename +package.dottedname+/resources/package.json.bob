@@ -29,6 +29,6 @@
   },
   "scripts": {
     "watch": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack --progress --colors --bail"
    }
 }
