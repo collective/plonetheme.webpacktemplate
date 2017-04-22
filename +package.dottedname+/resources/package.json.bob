@@ -24,7 +24,7 @@
     "webpack-merge": "^0.14.0"
   },
   "dependencies": {
-    "brace": "^0.8.0",
+    "brace": "^0.10.0",
 {{% if plone.version.startswith('5-latest') %}}
     "mockup": "https://github.com/plone/mockup.git#3d7407e32b0578354828dac87fe749b42da4202f"
 {{% elif plone.version.startswith('5.0') %}}
