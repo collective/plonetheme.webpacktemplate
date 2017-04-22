@@ -56,7 +56,7 @@
 @import "@{barcelonetaPath}/less/portlets.plone.less";
 @import "@{barcelonetaPath}/less/controlpanels.plone.less";
 @import "@{barcelonetaPath}/less/tags.plone.less";
-{{% if not theme.svg %}}
+{{% if theme.svg not in [True, 'yes'] %}}
 @import "@{barcelonetaPath}/less/contents.plone.less"; //fontello
 {{% else %}}
 //@import "@{barcelonetaPath}/less/contents.plone.less"; //fontello
@@ -88,90 +88,97 @@
 @import "@{barcelonetaPath}/less/discussion.plone.less";
 @import "@{barcelonetaPath}/less/search.plone.less";
 
-{{% if theme.svg %}}
+{{% if theme.svg in [True, 'yes'] %}}
+//*// Icons
 .image-icon, .image-tile { float: right; }
 
-#visual-portal-wrapper [class*="contenttype-"]:before {
+[class*="contenttype-"]:before,
+[class*="contenttype-"]:after {
   display: inline-block;
-  position: relative;
-  margin: 0 0 -@plone-padding-base-vertical * 0.75 0;
-  padding: 0;
-  left: inherit;
-  width: 18px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-position: center left;
-  background-size: 15px 15px;
-  content: "";
+  vertical-align: -0.1em;
+  width: 1em;
+  height: 1em;
+}
+[class*="contenttype-"]:after {
+  display: none;
 }
 
 #edit-zone #plone-contentmenu-factories [class*="contenttype-"] {
-  padding: 5px 15px 5px 50px;
+  padding: 5px 0 5px 40px;
   &:before {
-    background-image: none;
-    margin-bottom: 0;
+    display: none;
   }
   &:after {
     display: inline-block;
     position: absolute;
-    left: 25px;
-    padding: 0;
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 15px 15px;
-    content: "";
+    font-size: 18px;
+    left: 12px;
   }
 }
 
 /* Plone content types */
 .contenttype-folder:before {
-  background-image: url(icons/entypo-folder-black.svg);
+  content: url(icons/entypo-folder-black.svg);
+  width: 1.001em;
 }
 .contenttype-folder:after{
-  background-image: url(icons/entypo-folder-white.svg);
+  content: url(icons/entypo-folder-white.svg);
+  width: 1.001em;
 }
 .contenttype-collection:before {
-  background-image: url(icons/entypo-archive-black.svg);
+  content: url(icons/entypo-archive-black.svg);
+  width: 0.981em;
 }
 .contenttype-collection:after{
-  background-image: url(icons/entypo-archive-white.svg);
+  content: url(icons/entypo-archive-white.svg);
+  width: 0.981em;
 }
 .contenttype-image:before {
-  background-image: url(icons/fontawesome-picture-black.svg);
+  content: url(icons/fontawesome-picture-black.svg);
+  width: 1.071em;
 }
 .contenttype-image:after{
-  background-image: url(icons/fontawesome-picture-white.svg);
+  content: url(icons/fontawesome-picture-white.svg);
+  width: 1.071em;
 }
 .contenttype-link:before {
-  background-image: url(icons/mfglabs-link-black.svg);
+  content: url(icons/mfglabs-link-black.svg);
+  width: 0.887em;
 }
 .contenttype-link:after{
-  background-image: url(icons/mfglabs-link-white.svg);
+  content: url(icons/mfglabs-link-white.svg);
+  width: 0.887em;
 }
 .contenttype-document:before {
-  background-image: url(icons/fontawesome-doc-inv-black.svg);
+  content: url(icons/fontawesome-doc-inv-black.svg);
+  width: 0.857em;
 }
 .contenttype-document:after{
-  background-image: url(icons/fontawesome-doc-inv-white.svg);
+  content: url(icons/fontawesome-doc-inv-white.svg);
+  width: 0.857em;
 }
 .contenttype-event:before {
-  background-image: url(icons/fontawesome-calendar-empty-black.svg);
+  content: url(icons/fontawesome-calendar-empty-black.svg);
+  width: 0.929em;
 }
 .contenttype-event:after{
-  background-image: url(icons/fontawesome-calendar-empty-white.svg);
+  content: url(icons/fontawesome-calendar-empty-white.svg);
+  width: 0.929em;
 }
 .contenttype-file:before {
-  background-image: url(icons/fontawesome-attach-black.svg);
+  content: url(icons/fontawesome-attach-black.svg);
+  width: 0.786em;
 }
 .contenttype-file:after{
-  background-image: url(icons/fontawesome-attach-white.svg);
+  content: url(icons/fontawesome-attach-white.svg);
+  width: 0.786em;
 }
 .contenttype-news-item:before {
-  background-image: url(icons/modernpics-signal-black.svg);
+  content: url(icons/modernpics-signal-black.svg);
+  width: 0.854em;
 }
 .contenttype-news-item:after{
-  background-image: url(icons/modernpics-signal-white.svg);
+  content: url(icons/modernpics-signal-white.svg);
+  width: 0.854em;
 }
 {{% endif %}}

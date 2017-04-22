@@ -33,12 +33,24 @@ const common = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
     alias: {
-      'react': 'react', // override react shipped in Plone
-      'mockup-patterns-querystring': path.join( // broken in Plone 5.0.x with Webpack
+{{% if plone.version.startswith('5-latest') %}}
+      'mockup-patterns-querystring': path.join(  // broken in Plone 5.0.x with Webpack
          __dirname, 'node_modules/mockup/mockup/patterns/querystring/pattern')
+{{% elif plone.version.startswith('5.0') %}}
+      'mockup-patterns-querystring': path.join(  // broken in Plone 5.0.x with Webpack
+         __dirname, 'node_modules/mockup/mockup/patterns/querystring/pattern')
+{{% elif plone.version.startswith('5.1') %}}
+      'mockup-patterns-structure': path.join(
+        __dirname, 'node_modules', 'mockup', 'mockup', 'patterns', 'structure', 'pattern'),
+      'mockup-patterns-structure-url': path.join(
+__dirname, 'node_modules', 'mockup', 'mockup', 'patterns', 'structure')
+{{% endif %}}
     }
   },
   module: {
+{{% if plone.version.startswith('5.1') %}}
+    exprContextCritical: false,  // structure pattern has dynamic requires
+{{% endif %}}
     loaders: [
       { test: /\.jsx?$/,
         loaders: ['babel?cacheDirectory'],
@@ -49,14 +61,7 @@ const common = {
 
 switch(path.basename(process.argv[1])) {
   case 'webpack':
-    module.exports = merge(PLONE.production, common, {
-      resolve: {
-        alias: {
-          'react': 'react-lite',
-          'react-dom': 'react-lite'
-        }
-      }
-    });
+    module.exports = merge(PLONE.production, common);
     break;
 
   case 'webpack-dev-server':
