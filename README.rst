@@ -1,6 +1,9 @@
 plonetheme.webpacktemplate
 ==========================
 
+.. image:: https://travis-ci.org/collective/plonetheme.webpacktemplate.svg?branch=master
+    :target: https://travis-ci.org/collective/plonetheme.webpacktemplate
+
 ``plonetheme.webpacktemplate`` provides a `mr.bob <http://mrbob.readthedocs.org/en/latest/>`_ template to generate a webpack thema package for Plone.
 
 
