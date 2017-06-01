@@ -18,6 +18,12 @@ const PLONE = new PlonePlugin({
   publicPath: PUBLICPATH,
   sourcePath: PATHS.src,
   momentLocales: ['ca', 'fi'],
+{{% if theme.svg in [True, 'yes'] %}}
+  ignore: [
+      path.join(THEMENAME, 'icons', '*'),
+      path.join(THEMENAME, '?(*.js|*.jsx|*.css|*.less|*.scss)')
+  ],
+{{% endif %}}
   debug: false
 });
 
@@ -28,9 +34,6 @@ const common = {
   },
   output: {
     path: PATHS.build
-  },
-  devServer: {
-    outputPath: PATHS.build
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
