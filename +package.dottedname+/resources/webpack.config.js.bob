@@ -35,9 +35,6 @@ const common = {
   output: {
     path: PATHS.build
   },
-  devServer: {
-    outputPath: PATHS.build
-  },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
   },
