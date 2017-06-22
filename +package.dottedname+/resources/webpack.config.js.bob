@@ -29,14 +29,14 @@ const PLONE = new PlonePlugin({
 
 const common = {
   entry: {
-   'default': path.join(PATHS.src, 'default'),
-   'logged-in': path.join(PATHS.src, 'logged-in')
+    'default': path.join(PATHS.src, 'default'),
+    'logged-in': path.join(PATHS.src, 'logged-in')
   },
   output: {
     path: PATHS.build
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json']
   },
   module: {
 {{% if plone.version.startswith('5.1') %}}
