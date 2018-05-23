@@ -20,7 +20,7 @@ watch: clean node_modules $(SOURCES)
 
 .PHONY:
 clean:
-	$(RM) -r theme
+	$(RM) -r .plone theme
 
 node_modules: package.json
 	yarn install
