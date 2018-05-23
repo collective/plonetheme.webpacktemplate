@@ -20,6 +20,5 @@ env:
 - PLONE=5.0.7
 - PLONE=5.0-latest
 - PLONE=5.0-latest SVG=yes
-- PLONE=5.1b2
-- PLONE=5.1-latest
-- PLONE=5.1-latest SVG=yes
+- PLONE=5.1.2
+- PLONE=5.1.2 SVG=yes
