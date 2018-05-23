@@ -20,11 +20,8 @@ env:
 - PLONE=5.0-latest
 - PLONE=5.0-latest SVG=yes
 - PLONE=5.1
-- PLONE=5.1.1
-- PLONE=5.1.1 SVG_yes
+# PLONE=5.1.1 # is missing some TinyMCE resources
 - PLONE=5.1.2
-matrix:
-  allowed_failures:
-    env:
-    - PLONE=5.1.2
-    - PLONE=5.0.9-pending
+- PLONE=5.1.2 SVG=yes
+- PLONE=5.1-latest
+- PLONE=5.1-latest SVG=yes
