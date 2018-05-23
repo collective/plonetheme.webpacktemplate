@@ -13,13 +13,15 @@ install:
 script:
 - make -C ../build/plonetheme.mytheme info build
 env:
-- PLONE=5-latest
-- PLONE=5-latest SVG=yes
 - PLONE=5.0.5
 - PLONE=5.0.6
 - PLONE=5.0.7
+- PLONE=5.0.8
 - PLONE=5.0-latest
 - PLONE=5.0-latest SVG=yes
-- PLONE=5.1b2
+- PLONE=5.1
+# PLONE=5.1.1 # is missing some TinyMCE resources
+- PLONE=5.1.2
+- PLONE=5.1.2 SVG=yes
 - PLONE=5.1-latest
 - PLONE=5.1-latest SVG=yes

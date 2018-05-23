@@ -1,6 +1,7 @@
 BUILDOUT_BIN ?= $(shell command -v buildout || echo 'bin/buildout')
 BUILDOUT_ARGS ?=
 
+.PHONY:
 all: clean build
 
 build: resources/theme
@@ -8,22 +9,28 @@ build: resources/theme
 info: $(BUILDOUT_BIN) buildout.cfg
 	$(BUILDOUT_BIN) -N annotate
 
+.PHONY:
 watch: bin/instance resources/Makefile
 	make -j watch_plone watch_theme
 
+.PHONY:
 watch_plone: bin/instance
 	bin/instance fg
 
+.PHONY:
 watch_theme: resources/Makefile
 	sleep 10 # wait for Plone
 	make -C resources watch
 
+.PHONY:
 clean:
-	rm -rf .installed.cfg bin develop-eggs parts resources/theme
-
-###
-
-.PHONY: all build clean watch watch_plone watch_theme
+	$(RM) -r \
+		bin \
+		develop-eggs \
+		.installed.cfg \
+		parts \
+		resources/.plone
+		resources/theme \
 
 bootstrap-buildout.py:
 	curl -k -O https://bootstrap.pypa.io/bootstrap-buildout.py

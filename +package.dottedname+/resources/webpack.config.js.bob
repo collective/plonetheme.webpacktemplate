@@ -36,7 +36,22 @@ const common = {
     path: PATHS.build
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json'],
+{{% if plone.version in ['5.0.8', '5.0.9-pending', '5.0.9', '5.0-latest', '5.1.2', '5.1-latest'] %}}
+    alias: {
+        './img/loader.gif': '++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/img/loader.gif',
+        './img/object.gif': '++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/img/object.gif',
+        './img/anchor.gif': '++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/img/anchor.gif',
+        './fonts/tinymce.eot': '++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/fonts/tinymce.eot',
+        './fonts/tinymce.woff': '++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/fonts/tinymce.woff',
+        './fonts/tinymce.ttf': '++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/fonts/tinymce.ttf',
+        './fonts/tinymce.svg': '++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/fonts/tinymce.svg',
+        './fonts/tinymce-small.eot': '++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/fonts/tinymce-small.eot',
+        './fonts/tinymce-small.woff': '++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/fonts/tinymce-small.woff',
+        './fonts/tinymce-small.svg': '++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/fonts/tinymce-small.svg',
+        './fonts/tinymce-small.ttf': '++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/fonts/tinymce-small.ttf'
+    },
+{{% endif %}}
   },
   module: {
 {{% if plone.version.startswith('5.1') %}}
