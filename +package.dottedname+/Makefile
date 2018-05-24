@@ -29,8 +29,8 @@ clean:
 		develop-eggs \
 		.installed.cfg \
 		parts \
-		resources/.plone
-		resources/theme \
+		resources/.plone \
+		resources/theme
 
 bootstrap-buildout.py:
 	curl -k -O https://bootstrap.pypa.io/bootstrap-buildout.py
