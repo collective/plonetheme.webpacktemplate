@@ -14,22 +14,8 @@
 @import "@{barcelonetaPath}/less/mixin.clearfix.plone.less";
 @import "@{barcelonetaPath}/less/mixin.gridframework.plone.less"; //grid Bootstrap
 @import "@{barcelonetaPath}/less/mixin.grid.plone.less"; //grid Bootstrap
-// @import "@{barcelonetaPath}/less/mixin.font.plone.less";  //see below
-
-//*// mixin.font.plone.less must re-implemented for Webpack
-//*// @local is broken with textract-text-webpack-plugin ^1.0.1
-.font-face(@font-path; @file-name; @font-family; @font-weight; @font-style; @svg-id; @local, ~'';) {
-  @font-face {
-    font-family: @font-family;
-    src: url('@{barcelonetaPath}/less/@{font-path}@{file-name}.eot');
-    src: url('@{barcelonetaPath}/less/@{font-path}@{file-name}.eot?#iefix') format('embedded-opentype'),
-         url('@{barcelonetaPath}/less/@{font-path}@{file-name}.woff') format('woff'),
-         url('@{barcelonetaPath}/less/@{font-path}@{file-name}.ttf') format('truetype'),
-         url('@{barcelonetaPath}/less/@{font-path}@{file-name}.svg#@{svg-id}') format('svg');
-    font-weight: @font-weight;
-    font-style: @font-style;
-  }
-}
+@import "@{barcelonetaPath}/less/mixin.font.plone.less";
+@import "@{barcelonetaPath}/less/mixin.portlets.plone.less";
 
 //*// Reset and dependencies
 @import "@{barcelonetaPath}/less/normalize.plone.less";
@@ -56,11 +42,7 @@
 @import "@{barcelonetaPath}/less/portlets.plone.less";
 @import "@{barcelonetaPath}/less/controlpanels.plone.less";
 @import "@{barcelonetaPath}/less/tags.plone.less";
-{{% if theme.svg not in [True, 'yes'] %}}
 @import "@{barcelonetaPath}/less/contents.plone.less"; //fontello
-{{% else %}}
-//@import "@{barcelonetaPath}/less/contents.plone.less"; //fontello
-{{% endif %}}
 
 //*// Patterns
 @import "@{barcelonetaPath}/less/accessibility.plone.less";
@@ -72,6 +54,7 @@
 @import "@{barcelonetaPath}/less/tablesorter.plone.less";
 @import "@{barcelonetaPath}/less/tooltip.plone.less";
 @import "@{barcelonetaPath}/less/tree.plone.less";
+@import "@{barcelonetaPath}/less/dropdowns.plone.less";
 
 //*// Structure
 @import "@{barcelonetaPath}/less/header.plone.less";
@@ -87,98 +70,3 @@
 @import "@{barcelonetaPath}/less/behaviors.plone.less";
 @import "@{barcelonetaPath}/less/discussion.plone.less";
 @import "@{barcelonetaPath}/less/search.plone.less";
-
-{{% if theme.svg in [True, 'yes'] %}}
-//*// Icons
-.image-icon, .image-tile { float: right; }
-
-[class*="contenttype-"]:before,
-[class*="contenttype-"]:after {
-  display: inline-block;
-  vertical-align: -0.1em;
-  width: 1em;
-  height: 1em;
-}
-[class*="contenttype-"]:after {
-  display: none;
-}
-
-#edit-zone #plone-contentmenu-factories [class*="contenttype-"] {
-  padding: 5px 0 5px 40px;
-  &:before {
-    display: none;
-  }
-  &:after {
-    display: inline-block;
-    position: absolute;
-    font-size: 18px;
-    left: 12px;
-  }
-}
-
-/* Plone content types */
-.contenttype-folder:before {
-  content: url(icons/entypo-folder-black.svg);
-  width: 1.001em;
-}
-.contenttype-folder:after{
-  content: url(icons/entypo-folder-white.svg);
-  width: 1.001em;
-}
-.contenttype-collection:before {
-  content: url(icons/entypo-archive-black.svg);
-  width: 0.981em;
-}
-.contenttype-collection:after{
-  content: url(icons/entypo-archive-white.svg);
-  width: 0.981em;
-}
-.contenttype-image:before {
-  content: url(icons/fontawesome-picture-black.svg);
-  width: 1.071em;
-}
-.contenttype-image:after{
-  content: url(icons/fontawesome-picture-white.svg);
-  width: 1.071em;
-}
-.contenttype-link:before {
-  content: url(icons/mfglabs-link-black.svg);
-  width: 0.887em;
-}
-.contenttype-link:after{
-  content: url(icons/mfglabs-link-white.svg);
-  width: 0.887em;
-}
-.contenttype-document:before {
-  content: url(icons/fontawesome-doc-inv-black.svg);
-  width: 0.857em;
-}
-.contenttype-document:after{
-  content: url(icons/fontawesome-doc-inv-white.svg);
-  width: 0.857em;
-}
-.contenttype-event:before {
-  content: url(icons/fontawesome-calendar-empty-black.svg);
-  width: 0.929em;
-}
-.contenttype-event:after{
-  content: url(icons/fontawesome-calendar-empty-white.svg);
-  width: 0.929em;
-}
-.contenttype-file:before {
-  content: url(icons/fontawesome-attach-black.svg);
-  width: 0.786em;
-}
-.contenttype-file:after{
-  content: url(icons/fontawesome-attach-white.svg);
-  width: 0.786em;
-}
-.contenttype-news-item:before {
-  content: url(icons/modernpics-signal-black.svg);
-  width: 0.854em;
-}
-.contenttype-news-item:after{
-  content: url(icons/modernpics-signal-white.svg);
-  width: 0.854em;
-}
-{{% endif %}}

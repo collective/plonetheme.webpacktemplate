@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rules
-  xmlns="http://namespaces.plone.org/diazo"
-  xmlns:css="http://namespaces.plone.org/diazo/css">
+<rules xmlns="http://namespaces.plone.org/diazo">
 
   <!-- Drop default stylesheets and scripts -->
   <drop content="//link[@rel='stylesheet']" />
   <drop content="//script" />
 
-  <!-- Move scripts within body after bundle -->
+  <!-- Move inline scripts within head after bundle -->
   <after theme-children="/html/body" method="raw"
          content="/html/head/script[not(@src)]" />
+
+  <!-- Allow local requirejs configuration -->
+  <after theme-children="/html/body" method="raw"
+         content="/html/head/script[contains(@src, '/config.js')]" />
+
+  <!-- Move inline scripts within body after bundle -->
   <after theme-children="/html/body" method="raw"
          content="/html/body//script" />
-
-  <!-- Drop logged-in bundles for anonymous users -->
-  <drop css:if-content="body.userrole-anonymous"
-        theme="//*[@data-name='bundle-logged-in']" />
 
 </rules>

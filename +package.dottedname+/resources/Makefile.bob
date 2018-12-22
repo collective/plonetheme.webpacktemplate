@@ -2,37 +2,29 @@ export PATH := $(PATH):node_modules/.bin
 
 SOURCES = \
 	$(wildcard src/{{{ theme.folder }}}/*) \
-{{% if theme.svg in [True, 'yes'] %}}
-	src/{{{ theme.folder }}}/icons \
-{{% endif %}}
 	webpack.config.js
 
+.PHONY: all
 all: build
 
+.PHONY: build
 build: clean node_modules $(SOURCES)
-	npm run build
+	yarn run build
 
+.PHONY: watch
 watch: clean node_modules $(SOURCES)
-	npm run watch
+	yarn run watch
 
+.PHONY: clean
 clean:
 	$(RM) -r theme
 
-###
+.PHONY: purge
+purge: clean
+	$(RM) -r .plone
 
-.PHONY: all build watch clean
+###
 
 node_modules: package.json
 	npm install
 	touch node_modules
-
-{{% if theme.svg in [True, 'yes'] %}}
-src/{{{ theme.folder }}}/icons: node_modules fontello.json
-	fontello-svg --config fontello.json --no-css --verbose \
-	  --out src/{{{ theme.folder }}}/icons \
-	  --fill-colors "black:rgb(0,0,0)|white:rgb(255,255,255)"
-	sed -i.bak -E \
-	  's|svg height="([^"]+)" width="([^"]+)"|svg viewBox="0 0 \2 \1"|g' \
-	  src/{{{ theme.folder }}}/icons/*.svg
-	rm src/{{{ theme.folder }}}/icons/*.svg.bak
-{{% endif %}}

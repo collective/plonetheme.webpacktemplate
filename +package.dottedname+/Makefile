@@ -1,43 +1,25 @@
-BUILDOUT_BIN ?= $(shell command -v buildout || echo 'bin/buildout')
-BUILDOUT_ARGS ?=
+export PATH := $(PATH):node_modules/.bin
 
-all: clean build
+SOURCES = \
+	$(wildcard src/mytheme/*) \
+	webpack.config.js
 
-build: resources/theme
+all: build
 
-info: $(BUILDOUT_BIN) buildout.cfg
-	$(BUILDOUT_BIN) -N annotate
+build: clean node_modules $(SOURCES)
+	yarn run build
 
-watch: bin/instance resources/Makefile
-	make -j watch_plone watch_theme
-
-watch_plone: bin/instance
-	bin/instance fg
-
-watch_theme: resources/Makefile
-	sleep 10 # wait for Plone
-	make -C resources watch
+watch: clean node_modules $(SOURCES)
+	yarn run watch
 
 clean:
-	rm -rf .installed.cfg bin develop-eggs parts resources/theme
+	$(RM) -r theme
 
 ###
 
-.PHONY: all build clean watch watch_plone watch_theme
+.PHONY: all build watch clean
 
-bootstrap-buildout.py:
-	curl -k -O https://bootstrap.pypa.io/bootstrap-buildout.py
-
-bin/buildout: bootstrap-buildout.py buildout.cfg
-	python bootstrap-buildout.py -c buildout.cfg
-
-bin/instance: $(BUILDOUT_BIN) buildout.cfg
-	$(BUILDOUT_BIN) -N $(BUILDOUT_ARGS) install instance plonesite
-
-resources/theme: bin/instance resources/Makefile
-	bin/instance start; \
-	  make -C resources build; \
-	  status=$$?; \
-	  bin/instance stop; \
-	  exit $$status
+node_modules: package.json
+	yarn install
+	touch node_modules
 

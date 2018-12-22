@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 
@@ -17,38 +16,30 @@ const PLONE = new PlonePlugin({
   portalUrl: 'http://localhost:8080/' + SITENAME,
   publicPath: PUBLICPATH,
   sourcePath: PATHS.src,
-  momentLocales: ['ca', 'fi'],
-{{% if theme.svg in [True, 'yes'] %}}
-  ignore: [
-      path.join(THEMENAME, 'icons', '*'),
-      path.join(THEMENAME, '?(*.js|*.jsx|*.css|*.less|*.scss)')
-  ],
-{{% endif %}}
+  momentLocales: ['fi'],
   debug: false
 });
 
 const common = {
   entry: {
    'default': path.join(PATHS.src, 'default'),
-   'logged-in': path.join(PATHS.src, 'logged-in')
   },
   output: {
     path: PATHS.build
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.json'],
   },
   module: {
-{{% if plone.version.startswith('5.1') %}}
-    exprContextCritical: false,  // structure pattern has dynamic requires
-{{% endif %}}
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         use: [
           {
             loader: 'babel-loader',
-            options: { cacheDirectory: true }
+            options: {
+              cacheDirectory: true,
+            }
           }
         ],
         include: PATHS.src
@@ -65,9 +56,12 @@ switch(path.basename(process.argv[1])) {
   case 'webpack-dev-server':
     module.exports = merge(PLONE.development, common, {
       entry: [
-        path.join(PATHS.src, 'default'),
-        path.join(PATHS.src, 'logged-in')
+        path.join(PATHS.src, 'default')
       ]
     });
     break;
+}
+
+if (PLONE.config.debug) {
+  console.log(module.exports);
 }
