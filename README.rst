@@ -43,9 +43,7 @@ Start Plone and webpack-dev-server:
 
    $ make watch
 
-An example Plone site with hot-reloaded theme should be now available
-at http://localhost:8080/Plone/ (at first, the theme must be manually
-enabled from the configuration panel).
+An example Plone site with hot-reloaded theme should be now available at http://localhost:8080/Plone/ (at first, the theme must be manually enabled from the configuration panel).
 
 You will notice there are two themes available for installation:
 "My Theme" and "My Theme-customizations". 
@@ -62,27 +60,9 @@ Production theme is built with:
 
    $ make
 
-Please, note that Plone must be running while running the build, because
-webpack fetches all the default resources directly from a Plone site.
-
 This will generate a full folder structure under the 'theme' folder, ready to be zipped and deployed to a live production site.
 
-
-Usage with Vagrant
-------------------
-
-Start Plone and webpack-dev-server:
-
-.. code:: shell
-
-   $ make -f Makefile.vagrant watch
-
-Production theme is built with:
-
-.. code:: shell
-
-   $ make -f Makefile.vagrant
-
+Please, note that Plone must be running while running the initial build, because webpack fetches all the default resources directly from a Plone site. After the initial build the plugin uses its cache stored at `.plone` under the current working directory.
 
 
 Using the custom theme feature
@@ -115,5 +95,3 @@ However, some people have a workflow where they
 For all these situations, this mechanism can be a nice addition to their workflow.
 
 If you don't want to use it, just don't make a copy of "My Theme-customizations", and it will not be enabled.
-
-

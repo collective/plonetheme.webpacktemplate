@@ -1,7 +1,6 @@
 /.idea/
 /.installed.cfg
 /.mr.developer.cfg
-/.vagrant
 /.venv/
 /bin/
 /develop-eggs/
@@ -11,11 +10,7 @@
 /resources/.plonetheme-upload-cookie
 /resources/theme
 /result
+/resources/result
 /src/
 /var/
 /bootstrap-buildout.py
-/buildout.sh
-/kill_plone.sh
-/plone
-/plonectl.sh
-/vagrant_scp.sh

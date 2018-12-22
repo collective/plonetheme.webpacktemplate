@@ -14,7 +14,7 @@
     <xi:fallback/>
   </xi:include>
 
-  <!-- Configure webpack built bundles -->
+  <!-- Replace stylesheets and scripts with Webpack bundles -->
   <xi:include href="webpack.xml" />
 
 </rules>
