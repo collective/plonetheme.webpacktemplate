@@ -25,12 +25,12 @@ watch_theme: resources/Makefile
 .PHONY:
 clean:
 	$(RM) -r \
-		bin \
-		develop-eggs \
-		.installed.cfg \
-		parts \
-		resources/.plone \
-		resources/theme
+	bin \
+	develop-eggs \
+	.installed.cfg \
+	parts \
+	resources/.plone \
+	resources/theme
 
 bootstrap-buildout.py:
 	curl -k -O https://bootstrap.pypa.io/bootstrap-buildout.py
@@ -43,8 +43,7 @@ bin/instance: $(BUILDOUT_BIN) buildout.cfg
 
 resources/theme: bin/instance resources/Makefile
 	bin/instance start; \
-	  make -C resources build; \
-	  status=$$?; \
-	  bin/instance stop; \
-	  exit $$status
-
+	make -C resources build; \
+	status=$$?; \
+	bin/instance stop; \
+	exit $$status
