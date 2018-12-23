@@ -29,9 +29,7 @@ In short, it will ask you the following questions:
 - Theme title. Should be something like 'My Theme'
 - Theme folder name. Should be something like 'mytheme'. Avoid spaces, and make it something different than the site ID, which will be the next question.
 - Target site id. Defaults to 'Plone'
-- Use SVG for content-type icons. Answering 'yes' here will transform the current Plone Fontello contenttype icons into SVGs into the resulting theme,
-  making it easier to create your own inline SVGs also in your theme. It is a slightly 'hacky' solution to provide custom SVG icons.
-- Plone version. This needs to be a released version, like 5.0.7
+- Plone version. This needs to be a released version, like 5.1.4
 
 
 Usage
@@ -50,6 +48,7 @@ You will notice there are two themes available for installation:
 See below for the why and how. For now, just activate your "My Theme" theme.
 
 Stopping the `make watch` by pressing Ctrl-C will stop your local Plone instance and the webpack development server.
+
 
 Making the production theme
 ---------------------------
