@@ -23,5 +23,3 @@ env:
 # PLONE=5.1.1 # is missing some TinyMCE resources
 - PLONE=5.1.2
 - PLONE=5.1.2 SVG=yes
-- PLONE=5.1-latest
-- PLONE=5.1-latest SVG=yes
