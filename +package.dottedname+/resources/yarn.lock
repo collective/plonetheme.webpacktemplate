@@ -3843,9 +3843,9 @@ pkg-dir@^3.0.0:
   dependencies:
     find-up "^3.0.0"
 
-plonetheme-webpack-plugin@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/plonetheme-webpack-plugin/-/plonetheme-webpack-plugin-2.0.0.tgz#d09e21df2206ef4e18ea44c69da810127fe13845"
+plonetheme-webpack-plugin@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/plonetheme-webpack-plugin/-/plonetheme-webpack-plugin-2.0.1.tgz#c738cff21f6bc9beab79f0a48d21a425094bfa3d"
   dependencies:
     copy-webpack-plugin "^4.6.0"
     extend "^3.0.2"
