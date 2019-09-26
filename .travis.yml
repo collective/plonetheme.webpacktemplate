@@ -16,3 +16,4 @@ env:
 - PLONE=5.0.10
 - PLONE=5.1.4
 - PLONE=5.1.5
+- PLONE=5.2.0
