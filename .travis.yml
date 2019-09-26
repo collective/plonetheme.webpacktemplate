@@ -13,6 +13,7 @@ script:
 - make -C ../build/plonetheme.mytheme info build
 env:
 - PLONE=5.0.8
+- PLONE=5.0.9
 - PLONE=5.0.10
 - PLONE=5.1.5
 - PLONE=5.2.0
