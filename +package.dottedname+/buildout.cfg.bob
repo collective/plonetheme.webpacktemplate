@@ -22,3 +22,6 @@ products-initial =
 [versions]
 setuptools =
 zc.buildout =
+{{% if plone.version.startswith('5.0') %}}
+plone.recipe.zope2instance = 4.4.1
+{{% endif %}}

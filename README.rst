@@ -7,6 +7,16 @@ plonetheme.webpacktemplate
 ``plonetheme.webpacktemplate`` provides a `mr.bob <http://mrbob.readthedocs.org/en/latest/>`_ template to generate a webpack thema package for Plone.
 
 
+Compatibility
+-------------
+
+* Plone 5.0.8 is the latest supported 5.0.x version. Plone 5.0.9 and 5.0.10
+  cannot be supported, because their (TinyMCE) pattern sources include broken
+  references. (Technically it is possible to override TinyMCE pattern with
+  working version from a mockup checkout, but its configuration is beyond this
+  template.)
+
+
 Generate a new theme
 --------------------
 

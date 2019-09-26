@@ -4,15 +4,27 @@ import './default.less';
 import './theme.less';
 
 import jQuery from 'jquery';
+import registry from 'pat-registry';
 
 if (jQuery('body.userrole-anonymous').length === 0) {
+  {{% if plone.version.startswith('5.0') or plone.version.startswith('5.1') %}}
   import(/* webpackChunkName: "logged-in" */ './logged-in');
+  {{% else %}}
+  import(/* webpackChunkName: "logged-in" */ './logged-in').then(
+    () => jQuery(($) => setTimeout(() => registry.scan(document.body)))
+  );
+  {{% endif %}}
 
   /* Add extra bundles when needed */
   // import(/* webpackChunkName: "pfgquickedit" */ 'pfgquickedit');
   // import(/* webpackChunkName: "pfgquickedit" */ 'mosaic');
   // import(/* webpackChunkName: "pfgquickedit" */ 'layouts-editor');
 }
+{{% if not(plone.version.startswith('5.0') or plone.version.startswith('5.1')) %}}
+if (jQuery('body.userrole-anonymous').length > 0) {
+  jQuery(($) => setTimeout(() => registry.scan(document.body)));
+}
+{{% endif %}}
 
 /* Expose jQuery when needed */
 // window.jQuery = jQuery;

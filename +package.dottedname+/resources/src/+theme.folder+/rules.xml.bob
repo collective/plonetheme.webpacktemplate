@@ -6,6 +6,10 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"
     if-content="/html/body[@id='visual-portal-wrapper']">
 
+  <!-- Re-define variables from Barceloneta rules.xml root -->
+  <xsl:variable name="footer_portlets" select="//footer[@id='portal-footer-wrapper']//div[@class='portletWrapper']/*[not(contains(@id,'portal-colophon')) and not(contains(@id,'portal-footer-signature')) and not(contains(@class,'portletActions'))]"></xsl:variable>
+  <xsl:variable name="footer_portlets_count" select="count($footer_portlets)"></xsl:variable>
+
   <!-- Import Barceloneta rules -->
   <xi:include href="++theme++barceloneta/rules.xml" />
 
