@@ -4,7 +4,7 @@ plonetheme.webpacktemplate
 .. image:: https://travis-ci.org/collective/plonetheme.webpacktemplate.svg?branch=master
     :target: https://travis-ci.org/collective/plonetheme.webpacktemplate
 
-``plonetheme.webpacktemplate`` provides a `mr.bob <http://mrbob.readthedocs.org/en/latest/>`_ template to generate a webpack thema package for Plone.
+``plonetheme.webpacktemplate`` provides a `mr.bob <https://mrbob.readthedocs.org/en/latest/>`_ template to generate a webpack thema package for Plone.
 
 
 Compatibility
@@ -31,7 +31,7 @@ Now you can use it like this:
    $ git clone https://github.com/collective/plonetheme.webpacktemplate.git
    $ mrbob plonetheme.webpacktemplate
 
-See `the documentation of mr.bob <http://mrbob.readthedocs.org/en/latest/>`_  for further information.
+See `the documentation of mr.bob <https://mrbob.readthedocs.org/en/latest/>`_  for further information.
 
 In short, it will ask you the following questions:
 
